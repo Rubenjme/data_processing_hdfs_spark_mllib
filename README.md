@@ -98,7 +98,7 @@ Entra en Web Interfaces y abre JupyterLab.
 
 ![5jupyterLab](https://github.com/user-attachments/assets/744ec62c-7b99-4809-8c7f-fc1b45051999)
 
-### Subida del archivo csv y configuración
+### Subida del archivo csv y configuración final
 
 Abre una terminal de JupyterLab y usa el comando:
 
@@ -138,3 +138,4 @@ hdfs fsck /NombreDirectorio/flights.csv
 
 ![9fsckcomm](https://github.com/user-attachments/assets/265ac109-3675-47f3-b591-ebb2164951c1)
 
+A partir de aquí ya solo queda subir el notebook del proyecto y abrirlo para poder empezar a ejecutarlo.
