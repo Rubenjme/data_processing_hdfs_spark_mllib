@@ -51,20 +51,65 @@ El proyecto está estructurada en varias partes, abordando diferentes componente
 
 
 ## Configuración inicial
+Para el desarrollo del proyecto será necesario disponer de una cuenta en Google Cloud Platform (GCP) (https://cloud.google.com/free)
 
-Para el desarrollo del proytecto será necesario contar con una cuenta en Google Cloud Platform (GCP). 
-En GCP vamos a Cloud Storage -> Create Bucket.
-- Indicamos un nombre que debe ser único globalmente, al mío lo llamaré -> alpha-dataproc
-- Escojo como ubicación -> Europe-west1
-- No es necesario tocar nada más y le damos a crear.
+### Creación de un bucket
+En el menú lateral, ve a Cloud Storage -> Create Bucket.
 
-Vamos a Dataproc -> Clusters
-Abrimos el Google Cloud Shell, para la configuración del bucket podemos hacerlo mediante la interfaz gráfica o por comandos.
+Configura el bucket con:
+- Nombre: Debe ser único globalmente, al mío lo llamé -> alpha-dataproc
+- Ubicación: Selecciona "Region" y elige "europe-west1" (o la que prefieras)
+- No es necesario tocar nada más. Haz clic en el botón Create para finalizar.
 
-El comando a introducir es:
+![Creación Bucket](https://github.com/user-attachments/assets/07270a35-d52e-479f-a08f-d0f2e0f37570)
+
+### Creación de un clúster:
+La creación del clúster se puede realizar con la interfaz gráfica de Google Cloud, pero será más sencillo y rápido hacerlo por línea de comandos.
+
+Abrimos el Google Cloud Shell en la parte superior derecha.
+
+![2cloudshell](https://github.com/user-attachments/assets/2fa185b7-c122-4ce3-87e2-d6bff2fb9443)
+
+Introducimos el siguiente comando:
 
 gcloud beta dataproc clusters create **nombrecluster** --enable-component-gateway --bucket **nombrebucket** --region europe-west1 --zone europe-west1-c --master-machine-type n1-standard-2 --master-boot-disk-size 500 --num-workers 2 --worker-machine-type n1-standard-2 --worker-boot-disk-size 500 --image-version 2.0-debian10 --properties spark:spark.jars.packages=org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.3 --optional-components JUPYTER,ZOOKEEPER --max-age **14400s** --initialization-actions 'gs://goog-dataproc-initialization-actions-europe-west1/kafka/kafka.sh' --project **identificadorproyecto**
 
+Se debe modificar:
+- nombrecluster: Nombre que prefieras para el clúster, en el proyecto se usó -> cluster1
+- nombrebucket: Nombre del bucket creado anteriormente.
+- max-age: Es el tiempo que estará activo el clúster, pasado ese tiempo se eliminará para evitar gastos innecesarios (por defecto es 4 horas). Los datos y notebooks que necesiten persistencia deben almacenarse en el bucket GCS creado.
+- identificadorproyecto: El ID del proyecto en GCP (visible en la terminal en color amarillo)
 
-Para cargar el archivo flights.csv lo cargué en una web externa y ejecuté el comando -> wget http://155.138.224.174:8080/flights.csv
+Tardará unos minutos en crearse.
+
+![3codeshell](https://github.com/user-attachments/assets/de82f5ff-57fd-415c-a3fc-e1dc78a7f005)
+
+### Acceso al clúster:
+
+Una vez que el clúster esté operativo (marcado en verde), selecciona su nombre.
+
+![4cluster](https://github.com/user-attachments/assets/89138c23-d43d-40aa-8787-6884164d4417)
+
+Entra en Web Interfaces y abre JupyterLab.
+
+![5jupyterLab](https://github.com/user-attachments/assets/744ec62c-7b99-4809-8c7f-fc1b45051999)
+
+### Configuración y subida del archivo csv
+
+Abre una terminal de JupyterLab y usa el comando:
+
+hdfs dfs -mkdir /NombreDirectorio
+
+Sustituye nombre directorio por el que prefieras, en el proyecto se usó -> DataCluster_Test
+
+Sitúate en Local Disk y sube el archivo csv. 
+Al subirlo por la interfaz, no se subía corrcetamente, por lo que para cargar el archivo flights.csv lo cargué en una web externa y ejecuté el siguiente comando en la consola -> wget http://155.138.224.174:8080/flights.csv
 Con este comando se descargará a la carpeta en la que me encuentre trabajando en terminal.
+
+![6flightsup](https://github.com/user-attachments/assets/eaa32b85-3450-4462-9f15-21bd37a72e7f)
+
+El archivo debe aparecer de la siguiente forma:
+
+![6 1flightsup](https://github.com/user-attachments/assets/14c46138-8710-42b3-a9a8-7505deea39e2)
+
+
