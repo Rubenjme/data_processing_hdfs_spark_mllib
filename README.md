@@ -1,7 +1,5 @@
 # Procesamiento y predicción de retrasos aéreos con HDFS, Spark y Kafka
-<div style="text-align: center;">
-  <img src="https://static.vecteezy.com/system/resources/thumbnails/024/637/674/small_2x/jet-plane-in-flight-generative-ai-photo.jpg" width="400" alt="HDFS, Spark and Kafka">
-</div>
+
 ## Descripción del proyecto
 Este proyecto tiene como objetivo aplicar técnicas de procesamiento masivo de datos utilizando HDFS, Apache Spark (SQL, MLlib, Streaming) y Apache Kafka en un entorno clúster desplegado mediante Google Cloud Dataproc. A lo largo del proyecto, se aborda el análisis de un dataset de vuelos, integrando componentes de almacenamiento distribuido, procesamiento en tiempo real y aprendizaje automático. Se pretende conseguir un flujo integral desde la carga y transformación de datos hasta el cálculo de métricas y procesamiento en streaming.
 
