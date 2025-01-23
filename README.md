@@ -103,7 +103,9 @@ hdfs dfs -mkdir /NombreDirectorio
 Sustituye nombre directorio por el que prefieras, en el proyecto se usó -> DataCluster_Test
 
 Sitúate en Local Disk y sube el archivo csv. 
-Al subirlo por la interfaz, no se subía corrcetamente, por lo que para cargar el archivo flights.csv lo cargué en una web externa y ejecuté el siguiente comando en la consola -> wget http://155.138.224.174:8080/flights.csv
+
+En mi caso, al subirlo por la interfaz, no se subía correctamente, por lo que para cargar el archivo flights.csv lo cargué en una web externa y ejecuté el siguiente comando en la consola -> wget http://155.138.224.174:8080/flights.csv
+
 Con este comando se descargará a la carpeta en la que me encuentre trabajando en terminal.
 
 ![6flightsup](https://github.com/user-attachments/assets/eaa32b85-3450-4462-9f15-21bd37a72e7f)
@@ -127,7 +129,7 @@ hdfs dfs -ls /NombreDirectorio
 
 Ejecutamos el siguiente comando para conocer información detallada sobre cómo está almacenado el archivo:
 
-hdfs fsck /DataCluster_Test/flights.csv
+hdfs fsck /NombreDirectorio/flights.csv
 
 ![9fsckcomm](https://github.com/user-attachments/assets/265ac109-3675-47f3-b591-ebb2164951c1)
 
