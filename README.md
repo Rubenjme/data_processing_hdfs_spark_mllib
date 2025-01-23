@@ -61,14 +61,18 @@ Configura el bucket con:
 - Ubicación: Selecciona "Region" y elige "europe-west1" (o la que prefieras)
 - No es necesario tocar nada más. Haz clic en el botón Create para finalizar.
 
-![Creación Bucket](https://github.com/user-attachments/assets/07270a35-d52e-479f-a08f-d0f2e0f37570)
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/07270a35-d52e-479f-a08f-d0f2e0f37570">
+</div>
 
 ### Creación de un clúster:
 La creación del clúster se puede realizar con la interfaz gráfica de Google Cloud, pero será más sencillo y rápido hacerlo por línea de comandos.
 
 Abrimos el Google Cloud Shell en la parte superior derecha.
 
-![2cloudshell](https://github.com/user-attachments/assets/2fa185b7-c122-4ce3-87e2-d6bff2fb9443)
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/2fa185b7-c122-4ce3-87e2-d6bff2fb9443">
+</div>
 
 Introducimos el siguiente comando:
 
@@ -112,8 +116,9 @@ Con este comando se descargará a la carpeta en la que me encuentre trabajando e
 
 El archivo debe aparecer de la siguiente forma:
 
-![6 1flightsup](https://github.com/user-attachments/assets/14c46138-8710-42b3-a9a8-7505deea39e2)
-
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/14c46138-8710-42b3-a9a8-7505deea39e2">
+</div>
 
 Ejecutamos el siguiente comando para copiar el csv al directorios de hdfs creado anteriormente:
 
