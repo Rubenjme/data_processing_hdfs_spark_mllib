@@ -1,7 +1,7 @@
 # Procesamiento y predicción de retrasos aéreos con HDFS, Spark y Kafka
 
 ## Descripción del proyecto
-Este proyecto tiene como objetivo aplicar técnicas de procesamiento masivo de datos utilizando tecnologías como HDFS, Apache Spark (SQL, MLlib, Streaming) y Apache Kafka en un entorno clúster desplegado mediante Google Cloud Dataproc. A lo largo del proyecto, se aborda el análisis de un dataset de vuelos, integrando componentes de almacenamiento distribuido, procesamiento en tiempo real y aprendizaje automático. Se pretende conseguir un flujo integral desde la carga y transformación de datos hasta el cálculo de métricas y procesamiento en streaming.
+Este proyecto tiene como objetivo aplicar técnicas de procesamiento masivo de datos utilizando HDFS, Apache Spark (SQL, MLlib, Streaming) y Apache Kafka en un entorno clúster desplegado mediante Google Cloud Dataproc. A lo largo del proyecto, se aborda el análisis de un dataset de vuelos, integrando componentes de almacenamiento distribuido, procesamiento en tiempo real y aprendizaje automático. Se pretende conseguir un flujo integral desde la carga y transformación de datos hasta el cálculo de métricas y procesamiento en streaming.
 
 El archivo CSV contiene información sobre vuelos, con 162,049 registros y 16 columnas que incluyen detalles como fechas, tiempos de salida y llegada, retrasos, distancia, aerolíneas, etc.
 
@@ -41,7 +41,7 @@ El proyecto está estructurada en varias partes, abordando diferentes componente
 - Actualización continua de métricas calculadas en el apartado anterior.
 - Implementación de un flujo continuo con Structured Streaming para simular el análisis de datos en tiempo real.
 
-## Tecnologías y Herramientas Utilizadas
+## Tecnologías y herramientas utilizadas
 - HDFS: Sistema de almacenamiento distribuido.
 - Apache Spark: Framework para procesamiento masivo, análisis SQL y aprendizaje automático.
 - Apache Kafka: Plataforma de mensajería para flujos de datos en tiempo real.
@@ -94,7 +94,7 @@ Entra en Web Interfaces y abre JupyterLab.
 
 ![5jupyterLab](https://github.com/user-attachments/assets/744ec62c-7b99-4809-8c7f-fc1b45051999)
 
-### Configuración y subida del archivo csv
+### Subida del archivo csv y configuración
 
 Abre una terminal de JupyterLab y usa el comando:
 
@@ -112,4 +112,22 @@ El archivo debe aparecer de la siguiente forma:
 
 ![6 1flightsup](https://github.com/user-attachments/assets/14c46138-8710-42b3-a9a8-7505deea39e2)
 
+
+Ejecutamos el siguiente comando para copiar el csv al directorios de hdfs creado anteriormente:
+
+hdfs dfs -copyFromLocal flights.csv /NombreDirectorio
+
+![7copyfromlocal](https://github.com/user-attachments/assets/3b6cf2e6-9274-4776-a3a6-7191a6e03f68)
+
+Ejecutamos el siguiente comando para confirmar que se ha copiado correctamente:
+
+hdfs dfs -ls /NombreDirectorio
+
+![8lscommand](https://github.com/user-attachments/assets/7e08d075-98af-4598-afb2-cb0ccd64bf48)
+
+Ejecutamos el siguiente comando para conocer información detallada sobre cómo está almacenado el archivo:
+
+hdfs fsck /DataCluster_Test/flights.csv
+
+![9fsckcomm](https://github.com/user-attachments/assets/265ac109-3675-47f3-b591-ebb2164951c1)
 
