@@ -86,17 +86,23 @@ Se debe modificar:
 
 Tardará unos minutos en crearse.
 
-![3codeshell](https://github.com/user-attachments/assets/de82f5ff-57fd-415c-a3fc-e1dc78a7f005)
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/de82f5ff-57fd-415c-a3fc-e1dc78a7f005">
+</div>
 
 ### Acceso al clúster:
 
 Una vez que el clúster esté operativo (marcado en verde), selecciona su nombre.
 
-![4cluster](https://github.com/user-attachments/assets/89138c23-d43d-40aa-8787-6884164d4417)
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/89138c23-d43d-40aa-8787-6884164d4417">
+</div>
 
 Entra en Web Interfaces y abre JupyterLab.
 
-![5jupyterLab](https://github.com/user-attachments/assets/744ec62c-7b99-4809-8c7f-fc1b45051999)
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/744ec62c-7b99-4809-8c7f-fc1b45051999">
+</div>
 
 ### Subida del archivo csv y configuración final
 
@@ -112,7 +118,9 @@ En mi caso, al subirlo por la interfaz, no se subía correctamente, por lo que p
 
 Con este comando se descargará a la carpeta en la que me encuentre trabajando en terminal.
 
-![6flightsup](https://github.com/user-attachments/assets/eaa32b85-3450-4462-9f15-21bd37a72e7f)
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/eaa32b85-3450-4462-9f15-21bd37a72e7f">
+</div>
 
 El archivo debe aparecer de la siguiente forma:
 
