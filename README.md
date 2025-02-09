@@ -61,7 +61,7 @@ Configura el bucket con:
 - Ubicación: Selecciona "Region" y elige "europe-west1" (o la que prefieras)
 - No es necesario tocar nada más. Haz clic en el botón Create para finalizar.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/07270a35-d52e-479f-a08f-d0f2e0f37570">
 </div>
 
@@ -70,7 +70,7 @@ La creación del clúster se puede realizar con la interfaz gráfica de Google C
 
 Abrimos el Google Cloud Shell en la parte superior derecha.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/2fa185b7-c122-4ce3-87e2-d6bff2fb9443">
 </div>
 
@@ -86,7 +86,7 @@ Se debe modificar:
 
 Tardará unos minutos en crearse.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/de82f5ff-57fd-415c-a3fc-e1dc78a7f005">
 </div>
 
@@ -94,13 +94,13 @@ Tardará unos minutos en crearse.
 
 Una vez que el clúster esté operativo (marcado en verde), selecciona su nombre.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/89138c23-d43d-40aa-8787-6884164d4417">
 </div>
 
 Entra en Web Interfaces y abre JupyterLab.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/744ec62c-7b99-4809-8c7f-fc1b45051999">
 </div>
 
@@ -118,13 +118,13 @@ En mi caso, al subirlo por la interfaz, no se subía correctamente, por lo que p
 
 Con este comando se descargará a la carpeta en la que me encuentre trabajando en terminal.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/eaa32b85-3450-4462-9f15-21bd37a72e7f">
 </div>
 
 El archivo debe aparecer de la siguiente forma:
 
-<div style="text-align: center;">
+<div align="center">
   <img src="https://github.com/user-attachments/assets/14c46138-8710-42b3-a9a8-7505deea39e2">
 </div>
 
@@ -132,18 +132,24 @@ Ejecutamos el siguiente comando para copiar el csv al directorios de hdfs creado
 
 hdfs dfs -copyFromLocal flights.csv /NombreDirectorio
 
-![7copyfromlocal](https://github.com/user-attachments/assets/3b6cf2e6-9274-4776-a3a6-7191a6e03f68)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3b6cf2e6-9274-4776-a3a6-7191a6e03f68">
+</div>
 
 Ejecutamos el siguiente comando para confirmar que se ha copiado correctamente:
 
 hdfs dfs -ls /NombreDirectorio
 
-![8lscommand](https://github.com/user-attachments/assets/7e08d075-98af-4598-afb2-cb0ccd64bf48)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7e08d075-98af-4598-afb2-cb0ccd64bf48">
+</div>
 
 Ejecutamos el siguiente comando para conocer información detallada sobre cómo está almacenado el archivo:
 
 hdfs fsck /NombreDirectorio/flights.csv
 
-![9fsckcomm](https://github.com/user-attachments/assets/265ac109-3675-47f3-b591-ebb2164951c1)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/265ac109-3675-47f3-b591-ebb2164951c1">
+</div>
 
 A partir de aquí ya solo queda subir el notebook del proyecto y abrirlo para poder empezar a ejecutarlo.
